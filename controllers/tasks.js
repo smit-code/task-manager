@@ -29,7 +29,7 @@ exports.getTask = async (req, res) => {
     const id = req.params.id;
     const task = await Task.findById(id);
     if (!task) {
-      return res.status(404).json("Task not found");
+      return res.status(404).json("Task not found!!!");
     }
     res.status(200).json({ task });
   } catch (err) {
@@ -56,9 +56,9 @@ exports.deleteTask = async (req, res) => {
   try {
     const task = await Task.findByIdAndDelete(id);
     if (!task) {
-      return res.status(404).json("Task not found");
+      return res.status(404).json("Task not found!!");
     }
-    res.status(200).json("Task removed successfully");
+    res.status(200).json("Task removed successfully!!");
   } catch (err) {
     res.status(500).json(err);
   }
